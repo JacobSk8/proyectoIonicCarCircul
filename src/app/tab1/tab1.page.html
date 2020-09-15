@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Circulación Vehicular
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,24 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Calcular</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-item>
+    <ion-label color="primary" fixed>Valor</ion-label>
+    <ion-input type="number" [(ngModel)]="placa" placeholder="digitar el último número de su placa"></ion-input>ß
+  </ion-item>
+
+<button ion-button color="secondary" (click)="calcular();">Calcular</button> <br>
+
+<ion-card-header>
+  Resultado
+</ion-card-header>
+<ion-card-content>
+ 
+  <icon-label style="float:left">Su vehículo puede circular en los días: {{circulan1}} </icon-label>  
+</ion-card-content>
+
+
 </ion-content>
