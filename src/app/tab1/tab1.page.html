@@ -15,17 +15,19 @@
 
   <ion-item>
     <ion-label color="primary" fixed>Valor</ion-label>
-    <ion-input type="number" [(ngModel)]="placa" placeholder="digitar el último número de su placa"></ion-input>ß
+    <ion-input max="1" maxlength="1" type="number" [(ngModel)]=digitoUltimo placeholder="digitar el último número de su placa" aria-required="true"></ion-input>
   </ion-item>
 
 <button ion-button color="secondary" (click)="calcular();">Calcular</button> <br>
+
 
 <ion-card-header>
   Resultado
 </ion-card-header>
 <ion-card-content>
  
-  <icon-label style="float:left">Su vehículo puede circular en los días: {{circulan1}} </icon-label>  
+  <icon-label style="float:left">Su vehículo puede circular los días: </icon-label>  
+  <h2> {{circulan1}}</h2>
 </ion-card-content>
 
 

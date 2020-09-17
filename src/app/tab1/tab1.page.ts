@@ -7,14 +7,12 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  constructor(public navCtrl : NavController) {}
+
+  constructor() {}
 
   digitoUltimo: any;
-  circulan1: any;
-
-
+  circulan1: string = "";
   
-
   calcular(){
     
     var hoy = new Date();
@@ -24,52 +22,21 @@ export class Tab1Page {
     var num1 = this.digitoUltimo;
 
 
-
-    dd=this.addZero(dd);
-    mm=this.addZero(mm);
-
     var circulan11 = " lunes, miercoles y viernes";
     var circulan22 = " martes, jueves y sabado";
     var error = " debe ingresar un valor";
 
-   if(num1 != ""){
+   if(num1 != "" && num1 != null){
     if(mm%2){
-      if(num1%2){
-        this.circulan1 = circulan11;
-        
-      }else{
-        this.circulan1 = circulan22;
-
-      }
+       (num1%2) ? this.circulan1 = circulan11 :  this.circulan1 = circulan22;
   }else{
-      if(num1%2){
-        this.circulan1 = circulan22;
-
-      }else{
-        this.circulan1 = circulan11;
-
-    }
+    (num1%2) ?  this.circulan1 = circulan22 : this.circulan1 = circulan11 ;
   }
 }else{
   this.circulan1 = error;
-}
-   
-    
-
-
-    let hoy2 = dd+'/'+mm+'/'+yyyy;
-    console.log(hoy2);
+}  
 
   }
-
-
-  addZero(i) {
-    if (i < 10) {
-        i = '0' + i;
-    }
-    return i;
-}
-
 
 }
 
